@@ -1,4 +1,4 @@
-package com.microservices.entities
+package com.microservices.product.entities
 
 import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigDecimal
@@ -13,10 +13,5 @@ data class CouponEntity (
         val validFrom: Instant?,
         val validTo: Instant?,
         val discountPercent: Double?,
-        val discountValue: BigDecimal,
-        val discountType: DiscountType,
+        val discountValue: BigDecimal?,
 )
-
-enum class DiscountType {
-    PRODUCT, ORDER
-}
