@@ -1,8 +1,8 @@
-package com.microservices.product.dtos.requests
+package com.microservices.servicescommons.requests
+
 
 import java.math.BigDecimal
 import java.time.Instant
-import java.util.Currency
 
 data class ProductRequest (
         val name: String?,
