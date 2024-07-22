@@ -7,18 +7,30 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="product" />
+        <module name="message-queue" />
+        <module name="api-gateway" />
+        <module name="services-commons" />
         <module name="payment" />
         <module name="customer" />
         <module name="order" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="commons.main" target="17" />
+      <module name="commons.test" target="17" />
+      <module name="responses-requests" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="commons" options="-parameters" />
       <module name="customer" options="-parameters" />
+      <module name="message-queue" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="payment" options="-parameters" />
       <module name="product" options="-parameters" />
+      <module name="services-commons" options="-parameters" />
     </option>
   </component>
 </project>

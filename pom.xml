@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.0</version>
+    </parent>
+
+    <!-- Update these fields with your project's information -->
+    <groupId>com.learn-microservices</groupId>
+    <artifactId>com.learn-microservices</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <!-- List your modules here -->
+        <module>api-gateway</module>
+        <module>customer</module>
+        <module>order</module>
+        <module>payment</module>
+        <module>product</module>
+
+        <!-- Add more modules as needed -->
+    </modules>
+
+    <properties>
+        <java.version>17</java.version>
+        <spring.boot.admin.version>3.0.0</spring.boot.admin.version>
+        <detekt.version>1.23.1</detekt.version>
+        <kotlin.version>1.9.24</kotlin.version>
+        <kotlin-coroutines.version>1.6.4</kotlin-coroutines.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- List your dependencies here if any -->
+        </dependencies>
+    </dependencyManagement>
+
+</project>
