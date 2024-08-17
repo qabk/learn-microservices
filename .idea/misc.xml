@@ -17,6 +17,8 @@
         <option value="$PROJECT_DIR$/services-commons/pom.xml" />
         <option value="$PROJECT_DIR$/message-queue/pom.xml" />
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/discovery-service/pom.xml" />
+        <option value="$PROJECT_DIR$/chat/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

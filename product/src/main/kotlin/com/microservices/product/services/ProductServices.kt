@@ -18,50 +18,53 @@ class ProductServices(private val productRepository: ProductRepository) {
     }
 
     fun findProductById(id: String): Optional<ProductDto> {
-      return  productRepository.findById(id).map { it.toResponse() }
+        return productRepository.findById(id).map { it.toResponse() }
     }
 
-    fun updateProduct(id: String,updateProduct: ProductRequest){
+    fun updateProduct(id: String, updateProduct: ProductRequest) {
         val product = productRepository.findById(id).orElseThrow()
         productRepository.save(product.fromPatchRequest(updateProduct))
     }
 
-    fun findAllProductByIds(ids: List<String>) :List<ProductDto>{
+    fun findAllProductByIds(ids: List<String>): List<ProductDto> {
         return productRepository.findAllById(ids).map { it.toResponse() }
     }
 
     private fun ProductRequest.toEntity(): ProductEntity {
         return ProductEntity(
-                name = this.name,
-                description = this.description,
-                price = this.price,
-                validFrom = this.validFrom,
-                validTo = this.validTo,
-                currency = this.currency,
+            name = this.name,
+            description = this.description,
+            price = this.price,
+            validFrom = this.validFrom,
+            validTo = this.validTo,
+            currency = this.currency,
+            quantity = this.quantity,
         )
     }
 
-    private fun ProductEntity.fromPatchRequest(product: ProductRequest) : ProductEntity{
+    private fun ProductEntity.fromPatchRequest(product: ProductRequest): ProductEntity {
         return ProductEntity(
-                id = this.id,
-                name = product.name ?: this.name,
-                description = product.description ?: this.description,
-                price = product.price ?: this.price,
-                validFrom = product.validFrom ?: this.validFrom,
-                validTo = product.validTo ?: this.validTo,
-                currency = product.currency ?: this.currency,
+            id = this.id,
+            name = product.name ?: this.name,
+            description = product.description ?: this.description,
+            price = product.price ?: this.price,
+            validFrom = product.validFrom ?: this.validFrom,
+            validTo = product.validTo ?: this.validTo,
+            currency = product.currency ?: this.currency,
+            quantity = product.quantity ?: this.quantity,
         )
     }
 
     private fun ProductEntity.toResponse(): ProductDto {
         return ProductDto(
-                id = this.id,
-                name = this.name,
-                description = this.description,
-                price = this.price,
-                currency = this.currency,
-                validFrom = this.validFrom,
-                validTo = this.validTo,
-                )
+            id = this.id,
+            name = this.name,
+            description = this.description,
+            price = this.price,
+            currency = this.currency,
+            validFrom = this.validFrom,
+            validTo = this.validTo,
+            quantity = this.quantity,
+        )
     }
 }

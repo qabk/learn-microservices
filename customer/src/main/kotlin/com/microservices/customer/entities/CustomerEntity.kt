@@ -3,7 +3,6 @@ package com.microservices.customer.entities
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.Instant
-
 @Document(collection = "customer")
 data class CustomerEntity (
         @Id
@@ -12,5 +11,5 @@ data class CustomerEntity (
         val lastName: String?,
         val dateOfBirth: Instant?,
         val address: String?,
-        val email: String?
+        val email: String?,
 )

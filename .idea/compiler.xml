@@ -8,9 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="product" />
         <module name="message-queue" />
+        <module name="chat" />
         <module name="api-gateway" />
         <module name="services-commons" />
         <module name="payment" />
+        <module name="discovery-service" />
         <module name="customer" />
         <module name="order" />
       </profile>
@@ -24,8 +26,10 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="chat" options="-parameters" />
       <module name="commons" options="-parameters" />
       <module name="customer" options="-parameters" />
+      <module name="discovery-service" options="-parameters" />
       <module name="message-queue" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="payment" options="-parameters" />

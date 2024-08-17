@@ -7,8 +7,9 @@ data class ProductDto(
         val id: String?,
         val name: String?,
         val description: String?,
-        val price: BigDecimal?,
+        val price: Long?,
         val validFrom: Instant?,
         val validTo: Instant?,
         val currency:  String?,
+        val quantity: Int?
 )

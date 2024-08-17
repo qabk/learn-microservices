@@ -40,7 +40,7 @@ class ProductController(private val productService: ProductServices) {
 
     @GetMapping(
             produces = ["application/json", "*/*"],
-            value = ["/{id}"],
+            value = ["id/{id}"],
     )
 
     fun getProductById(
